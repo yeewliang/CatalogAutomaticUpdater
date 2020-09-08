@@ -27,7 +27,7 @@ def check_cpu_usage():
     return usage < 80
     
 def send_email(subject):
-    email = emails.generate_email("automation@example.com", "student-01-2e175e2f136d@example.com",
+    email = emails.generate_email("automation@example.com", "student-00-f4811096e571@example.com",
                                   subject,
                                   "Please check your system and resolve the issue as soon as possible.", "")
     emails.send_email(email)

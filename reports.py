@@ -14,4 +14,4 @@ def generate_report(attachment, add_info, title):
     report_info = Paragraph(add_info, styles['BodyText'])
     space = Spacer(1,0.2*inch)
 
-    report.build([report_title, empty_line, report_info, space])
+    report.build([report_title, space, report_info, space])

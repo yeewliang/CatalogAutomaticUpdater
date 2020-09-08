@@ -8,7 +8,7 @@ from datetime import date
 from reports import generate_report
 from emails import generate_email, send_email
 
-supplierDir = "./supplier-data/descriptions"
+supplierDir = "./supplier-data/descriptions/"
 supplierData = dict.fromkeys(["name","weight","description"])
 
 def report_body():
@@ -17,7 +17,7 @@ def report_body():
     weights = []
     for item in os.listdir(supplierDir):
       filename=os.path.join(supplierDir,item)
-      with open(filename) as f:
+      with open(filename) as fp:
         name = fp.readline()
         weight = fp.readline()
         

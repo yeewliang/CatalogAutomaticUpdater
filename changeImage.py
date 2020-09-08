@@ -10,6 +10,6 @@ files = [f for f in os.listdir(curDir)]
 for file in files:
   if file.endswith(".tiff"):
     print(file)
-    im = Image.open(curDir+file)
+    im = Image.open(os.path.join(curDir+file))
     new_im = im.resize((600,400)).convert("RGB")
-    new_im.save(curDir + "/" + file + ".jpeg")
+    new_im.save(curDir + "/" + file.replace(".tiff",".jpeg"))

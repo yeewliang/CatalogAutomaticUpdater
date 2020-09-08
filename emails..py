@@ -4,6 +4,7 @@
 from email.message import EmailMessage
 import mimetypes
 import smtplib
+import os
 
 def generate_email(sender, recipient, subject, body, report):
   # Crafting the email message
@@ -12,12 +13,13 @@ def generate_email(sender, recipient, subject, body, report):
   message["To"] = receipient
   message.set_content(body)
   message["Subject"] = subject
-  attachment_filename = os.path.basename(report)
-  mime_type, _ = mimetypes.guess_type(report)
-  mime_type, mime_subtype = mime_type.split('/', 1)
+  if not report == "" 
+    attachment_filename = os.path.basename(report)
+    mime_type, _ = mimetypes.guess_type(report)
+    mime_type, mime_subtype = mime_type.split('/', 1)
   
-  with open(report, 'rb') as ap:
-    message.add_attachment(ap.read(), maintype=mime_type, subtype=mime_subtype,filename=os.path.basename(report))
+    with open(report, 'rb') as ap:
+      message.add_attachment(ap.read(), maintype=mime_type, subtype=mime_subtype,filename=os.path.basename(report))
   
   return message
     
