@@ -3,6 +3,7 @@ import socket
 import shutil
 import psutil
 import emails
+# credit: Sudhansu Dwivedi for forum contribution. Code were adapted from his answers
 
 def check_localhost():
     localhost = socket.gethostbyname('localhost')
