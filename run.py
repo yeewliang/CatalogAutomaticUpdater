@@ -21,7 +21,8 @@ for f in files:
       supplierData["image_name"] = f + ".jpeg"
 
       #POST to feedback
-      r = requests.post('http://34.121.68.83/fruits/', data = supplierData)
+      r = requests.post('http://localhost/fruits/', data = supplierData)
+      user = os.getenv('USER')
       #if not okay, raise exception
       if not r.ok:
         raise Exception("POST failed with status code {}".format(r.status_code))
