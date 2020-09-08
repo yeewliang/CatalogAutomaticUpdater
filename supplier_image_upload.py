@@ -12,5 +12,5 @@ curDir = "./supplier-data/images"
 files = [f for f in os.listdir(curDir)]
 for file in files:
   if file.endswith(".jpeg"):
-    with open(file, 'rb') as opened:
+    with open(curDir+"/"+file, 'rb') as opened:
       r = requests.post(url, files={'file': opened})
